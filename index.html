@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps</title>
+</head>
+<style>
+    .container{
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    input{
+        width: 350px;
+        height: 150px;
+        font-size: 40px;
+    }
+</style>
+<body>
+    <div class="container">
+        <a onclick="redirect()">
+            <input class="" type="button" value="Como llegar?" >
+        </a>
+    </div>
+</body>
+<script>
+    function redirect(){
+    navigator.geolocation.getCurrentPosition(geo);
+}
+    
+function geo(geolocationPosition){
+    
+    console.log(geolocationPosition);
+    let coords = geolocationPosition.coords;
+
+    window.open("https://www.google.com/maps/dir/'"+coords.latitude+","+coords.longitude+"'/'32.662785919276786,-115.49542096026951'");
+}
+</script>
+</html>
