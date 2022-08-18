@@ -10,7 +10,6 @@ function geo(geolocationPosition){
 
     window.open("https://www.google.com/maps/dir/'"+coords.latitude+","+coords.longitude+"'/'32.662785919276786,-115.49542096026951'");
 }
-    let divice = navigator.userAgent;
 
     if(navigator.userAgent.match(/Android/i) ||
        navigator.userAgent.match(/webOS/i) ||
