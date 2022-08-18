@@ -20,7 +20,7 @@ function geo(geolocationPosition){
        navigator.userAgent.match(/iPod/i) ||
        navigator.userAgent.match(/Windows Phone/i))
        {
-        console.log("Estas utilizando un dispositivo movil.");
+        document.getElementById("divice").innerHTML = "Estas utilizando un dispositivo movil.";
        }else{
-        console.log("Estas utilizando un dispositivo de escritorio.");
+        document.getElementById("divice").innerHTML = "Estas utilizando un dispositivo de escritorio.";
        }
