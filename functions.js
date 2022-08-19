@@ -1,14 +1,28 @@
 
-function redirect(){
-    navigator.geolocation.getCurrentPosition(geo);
-}
-    
+navigator.geolocation.getCurrentPosition(geo);
+
 function geo(geolocationPosition){
     
     console.log(geolocationPosition);
-    let coords = geolocationPosition.coords;
+    window.coords = geolocationPosition.coords;
 
-    window.open("https://www.google.com/maps/dir/?api=1&origin="+coords.latitude+","+coords.longitude+"&destination=32.662785919276786, -115.49542096026951");
+    document.getElementById("location").innerHTML = coords.latitude+","+coords.longitude;
+}
+
+function search(){
+    let destination = document.getElementById("search").value;
+
+    window.open("https://www.google.com/maps/search/?api=1&query="+destination+"mexicali");
+}
+    
+function ingresar_ubicacion(){
+   document.getElementById("origin").value = coords.latitude+","+coords.longitude;
+}
+function route(){
+    let origin = document.getElementById("origin").value;
+    let destination = document.getElementById("destination").value;
+
+    window.open("https://www.google.com/maps/dir/?api=1&origin="+origin+"&destination="+destination);
 }
 
     if(navigator.userAgent.match(/Android/i) ||
