@@ -8,7 +8,7 @@ function geo(geolocationPosition){
     console.log(geolocationPosition);
     let coords = geolocationPosition.coords;
 
-    window.open("https://www.google.com/maps/dir/'"+coords.latitude+","+coords.longitude+"'/'32.662785919276786,-115.49542096026951'");
+    window.open("https://www.google.com/maps/dir/?api=1&origin="+coords.latitude+","+coords.longitude+"&destination=32.662785919276786, -115.49542096026951");
 }
 
     if(navigator.userAgent.match(/Android/i) ||
