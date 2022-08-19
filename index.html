@@ -7,25 +7,39 @@
     <title>Maps</title>
 </head>
 <style>
-    .container{
-        height: 90vh;
+    .main{
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
+        width: 300px;
+        
     }
-    input{
-        width: 350px;
-        height: 150px;
-        font-size: 40px;
+    .container{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
     }
 </style>
 <body>
+<div>
+<label for="">Tu ubicacion es:</label>
+<p id="location"></p>
+</div>
+<div class="main">
     <div class="container">
-        <a onclick="redirect()">
-            <input class="" type="button" value="Como llegar?" >
-        </a>
+        <label for="">Buscar en el mapa.</label>
+        <input type="text" id="search"> 
+        <input type="button" value="Buscar" onclick="search()">
     </div>
-        <div><p id="divice"></p></div>
+    
+    <div class="container">
+        <label for="">Escriba las ubicaciones del recorrido.</label>
+            <input type="button" value="mi ubicacion" onclick="ingresar_ubicacion()">
+            <input type="text" id="origin">
+            <input type="text" id="destination">
+            <input class="" type="button" value="Como llegar?" onclick="route()"> 
+    </div>
+    <div><p id="divice"></p></div>
+</div>
 </body>
 <script src="./functions.js"></script>
 </html>
